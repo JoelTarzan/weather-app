@@ -4,6 +4,7 @@ import {GEO_API_URL, geoApiOptions} from "../../api";
 
 const Search = ({onSearchChange}) => {
 
+    // Creamos un hook para lo que buscamos
     const [search, setSearch] = useState(null);
 
     // Función para ir cargando las opciones conforme se vaya escribiendo mediante peticiones a la api
