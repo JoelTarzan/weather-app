@@ -1,8 +1,9 @@
 import './App.css';
+import {useState} from "react";
 import Search from "./components/search/search";
 import CurrentWeather from "./components/current-weather/current-weather";
-import {WEATHER_API_URL, WEATHER_API_KEY} from "./api"
-import {useState} from "react";
+import Forecast from "./components/forecast/forecast";
+import {WEATHER_API_URL, WEATHER_API_KEY} from "./api";
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
     const [currentWeather, setCurrentWeather] = useState(null)
     const [forecast, setForecast] = useState(null);
 
+    // Esta función se la pasaremos como propiedad al componente de Search cada vez que se produzca un cambio en la búsqueda
     const handleOnSearchChange = (searchData) => {
 
         // Nos guardamos la latitud y la longitud de la ciudad que hayamos seleccionado
@@ -35,13 +37,11 @@ function App() {
             .catch((err) => console.log(err));
     };
 
-    console.log(currentWeather);
-    console.log(forecast);
-
   return (
     <div className="container">
-        <Search onSearchChange={handleOnSearchChange}/>
-        {currentWeather && <CurrentWeather data={currentWeather}/>}
+        <Search onSearchChange={handleOnSearchChange} />
+        {currentWeather && <CurrentWeather data={currentWeather} />}
+        {forecast && <Forecast data={forecast}/>}
     </div>
   );
 }
