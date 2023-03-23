@@ -27,13 +27,16 @@ function App() {
             .catch(err => console.error(err));
     }
 
+    // Si existe lastSearch en el localStorage cogera esos datos, si no, la ubicacion actual
     useEffect(() => {
-        searchActualLocation().then(() => {
-            handleOnSearchChange(searchInitialValue);
-        });
+        if (localStorage.getItem('lastSearch')) {
+            handleOnSearchChange(JSON.parse(localStorage.getItem('lastSearch')));
+        } else {
+            searchActualLocation().then(() => {
+                handleOnSearchChange(searchInitialValue);
+            });
+        }
     }, []);
-
-
 
     // Creamos dos hooks, para el tiempo actual y para la previsión
     const [currentWeather, setCurrentWeather] = useState(null)
@@ -52,6 +55,9 @@ function App() {
         const forecastFetch = fetch(
             `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
         );
+
+        // Guardamos la búsqueda actual en el localStorage
+        localStorage.setItem('lastSearch', JSON.stringify(searchData));
 
         // Una vez tenemos las respuestas de las peticiones actualizamos nuestras constantes
         Promise.all([currentWeatherFetch, forecastFetch])
