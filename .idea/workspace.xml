@@ -7,7 +7,6 @@
     <list default="true" id="e0656b0d-9cda-430f-87b6-6534d47bdacd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/search/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/search.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +38,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/joel_/Documents/DAW 2/M12 [Proyecto]/app-clima&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/joel_/Documents/DAW 2/M12 [Proyecto]/portfolio&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -68,6 +67,9 @@
       <workItem from="1675359262324" duration="1901000" />
       <workItem from="1679457684714" duration="4350000" />
       <workItem from="1679493217595" duration="5000" />
+      <workItem from="1679493557138" duration="139000" />
+      <workItem from="1679516435757" duration="910000" />
+      <workItem from="1679565456786" duration="3769000" />
     </task>
     <servers />
   </component>

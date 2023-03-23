@@ -1,11 +1,39 @@
 import './App.css';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Search from "./components/search/search";
 import CurrentWeather from "./components/current-weather/current-weather";
 import Forecast from "./components/forecast/forecast";
 import {WEATHER_API_URL, WEATHER_API_KEY} from "./api";
 
 function App() {
+
+    // Funcion para buscar la localizacion del dispositivo
+    const searchInitialValue = {
+        label: '',
+        value: ''
+    }
+    const searchActualLocation = () => {
+        return fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                const city = data.city;
+                const country_code = data.country_code;
+                const latitude = data.latitude;
+                const longitude = data.longitude;
+
+                searchInitialValue.label = city + ', ' + country_code;
+                searchInitialValue.value = latitude + ' ' + longitude;
+            })
+            .catch(err => console.error(err));
+    }
+
+    useEffect(() => {
+        searchActualLocation().then(() => {
+            handleOnSearchChange(searchInitialValue);
+        });
+    }, []);
+
+
 
     // Creamos dos hooks, para el tiempo actual y para la previsión
     const [currentWeather, setCurrentWeather] = useState(null)
